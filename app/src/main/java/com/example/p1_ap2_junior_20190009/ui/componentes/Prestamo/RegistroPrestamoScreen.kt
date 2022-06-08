@@ -1,4 +1,4 @@
-package com.example.p1_ap2_junior_20190009.ui.componentes.Parcial1Ap2
+package com.example.p1_ap2_junior_20190009.ui.componentes.Prestamo
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,25 +16,24 @@ import androidx.navigation.NavHostController
 
 //TODO Realizar ventana del registo de la clase correspondiente
 @Composable
-fun RegistroParcial1Ap2Screen(
+fun RegistroPrestamoScreen(
     navHostController: NavHostController,
-    parcial1Ap2ViewModel: Parcial1Ap2ViewModel = hiltViewModel()
+    prestamoViewModel: PrestamoViewModel = hiltViewModel()
     ) {
 
-    //val ocup = listOf("Maestro", "Ingeniero", "Doctor", "Carpinterio")
 
     Scaffold(
-        topBar = { TopAppBar(title = { Text(text = "Registro del primer parcial") }) }
+        topBar = { TopAppBar(title = { Text(text = "Registro de prestamos") }) }
     ){
 
 
     Column(modifier = Modifier.padding(8.dp)) {
-       /* OutlinedTextField(
-            value = clienteViewModel.nombre,
-            onValueChange = {clienteViewModel.nombre = it},
+        OutlinedTextField(
+            value = prestamoViewModel.deudor,
+            onValueChange = {prestamoViewModel.deudor = it},
             modifier = Modifier.fillMaxWidth(),
             label = {
-                Text(text = "Nombre de la Persona")
+                Text(text = "Nombre del Deudor")
             },
             leadingIcon = {
                 Icon(
@@ -44,11 +43,11 @@ fun RegistroParcial1Ap2Screen(
         )
 
         OutlinedTextField(
-            value = clienteViewModel.email,
-            onValueChange = {clienteViewModel.email = it},
+            value = prestamoViewModel.concepto,
+            onValueChange = {prestamoViewModel.concepto = it},
             modifier = Modifier.fillMaxWidth(),
             label = {
-                Text(text = "Email")
+                Text(text = "Concepto")
             },
             leadingIcon = {
                 Icon(
@@ -57,26 +56,24 @@ fun RegistroParcial1Ap2Screen(
             }
         )
 
-        OcupacionesSpinner(ocupacion = ocup)
-
         OutlinedTextField(
 
-            value = clienteViewModel.balance,
-            onValueChange = {clienteViewModel.balance = it},
+            value = prestamoViewModel.monto,
+            onValueChange = {prestamoViewModel.monto = it},
             modifier = Modifier.fillMaxWidth(),
             label = {
-                Text(text = "Salario")
+                Text(text = "Monto")
             },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Check,
                     contentDescription = null)
             }
-        )*/
+        )
 
         OutlinedButton(
             onClick = {
-                parcial1Ap2ViewModel.Guardar()
+                prestamoViewModel.Guardar()
                 navHostController.navigateUp()
             }
         ) {
