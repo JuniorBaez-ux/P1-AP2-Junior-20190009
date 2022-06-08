@@ -1,4 +1,4 @@
-package com.example.p1_ap2_junior_20190009.ui.componentes.Parcial1Ap2
+package com.example.p1_ap2_junior_20190009.ui.componentes.Prestamo
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -14,27 +14,25 @@ import javax.inject.Inject
 //TODO Implementar view model de la clase correspondiente
 
 @HiltViewModel
-class Parcial1Ap2ViewModel @Inject constructor(
+class PrestamoViewModel @Inject constructor(
     val parcial1Ap2Repository: Parcial1Ap2Repository
 ): ViewModel() {
 
    // var clientes = clienteRepository.GetLista()
 
-    var clienteID by mutableStateOf(0)
-/*    var nombre by mutableStateOf("")
-    var email by mutableStateOf("")
-    var ocupacionId by mutableStateOf(0)
-    var balance by mutableStateOf("")*/
+    var prestamoId by mutableStateOf(0)
+    var deudor by mutableStateOf("")
+    var concepto by mutableStateOf("")
+    var monto by mutableStateOf("")
 
     fun Guardar(){
         viewModelScope.launch {
             parcial1Ap2Repository.Insertar(
                 Parcial1Ap2(
-                    objetoId = clienteID,
-                    /*nombre = nombre,
-                    email = email,
-                    ocupacionId = ocupacionId,
-                    balance = balance.toString().toDouble()*/
+                    prestamoId = prestamoId,
+                    deudor = deudor,
+                    concepto = concepto,
+                    monto = monto.toDouble()
                 )
             )
         }
