@@ -2,8 +2,8 @@ package com.example.p1_ap2_junior_20190009.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.p1_ap2_junior_20190009.data.Parcial1Ap2Dao
-import com.example.p1_ap2_junior_20190009.data.Parcial1Ap2Db
+import com.example.p1_ap2_junior_20190009.data.PrestamosDao
+import com.example.p1_ap2_junior_20190009.data.PrestamosDb
 import com.example.p1_ap2_junior_20190009.data.repository.Parcial1Ap2Repository
 import dagger.Module
 import dagger.Provides
@@ -19,11 +19,11 @@ object  AppModule {
 
     @Singleton
     @Provides
-    fun ProvideTicketDb(@ApplicationContext context: Context): Parcial1Ap2Db {
+    fun ProvideTicketDb(@ApplicationContext context: Context): PrestamosDb {
         val DATABASE_NAME = "PrestamoDb"
         return Room.databaseBuilder(
             context,
-            Parcial1Ap2Db::class.java,
+            PrestamosDb::class.java,
             DATABASE_NAME       )
             .fallbackToDestructiveMigration()
             .build()
@@ -31,12 +31,12 @@ object  AppModule {
 
 
     @Provides
-    fun ProvideParcial1Ap2DAO(parcialDb: Parcial1Ap2Db): Parcial1Ap2Dao {
-        return parcialDb.parcial1Ap2Dao
+    fun ProvideParcial1Ap2DAO(prestamosDb: PrestamosDb): PrestamosDao {
+        return prestamosDb.prestamosDao
     }
 
     @Provides
-    fun ProvideParcial1Ap2Repository(parcial12Dao: Parcial1Ap2Dao): Parcial1Ap2Repository {
-        return Parcial1Ap2Repository(parcial12Dao)
+    fun ProvideParcial1Ap2Repository(prestamosDao: PrestamosDao): Parcial1Ap2Repository {
+        return Parcial1Ap2Repository(prestamosDao)
     }
 }
