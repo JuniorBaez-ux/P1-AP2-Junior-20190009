@@ -20,7 +20,7 @@ object  AppModule {
     @Singleton
     @Provides
     fun ProvideTicketDb(@ApplicationContext context: Context): Parcial1Ap2Db {
-        val DATABASE_NAME = "ParcialDb"
+        val DATABASE_NAME = "PrestamoDb"
         return Room.databaseBuilder(
             context,
             Parcial1Ap2Db::class.java,
