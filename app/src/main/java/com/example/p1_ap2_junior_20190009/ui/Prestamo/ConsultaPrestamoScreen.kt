@@ -1,4 +1,4 @@
-package com.example.p1_ap2_junior_20190009.ui.componentes.Prestamo
+package com.example.p1_ap2_junior_20190009.ui.Prestamo
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
