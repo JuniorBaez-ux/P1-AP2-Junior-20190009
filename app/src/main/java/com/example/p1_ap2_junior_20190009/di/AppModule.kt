@@ -31,12 +31,12 @@ object  AppModule {
 
 
     @Provides
-    fun ProvideClienteDAO(parcialDb: Parcial1Ap2Db): Parcial1Ap2Dao {
+    fun ProvideParcial1Ap2DAO(parcialDb: Parcial1Ap2Db): Parcial1Ap2Dao {
         return parcialDb.parcial1Ap2Dao
     }
 
     @Provides
-    fun ProvideClienteRepository(parcial12Dao: Parcial1Ap2Dao): Parcial1Ap2Repository {
+    fun ProvideParcial1Ap2Repository(parcial12Dao: Parcial1Ap2Dao): Parcial1Ap2Repository {
         return Parcial1Ap2Repository(parcial12Dao)
     }
 }
