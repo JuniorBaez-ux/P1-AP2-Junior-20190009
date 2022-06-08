@@ -4,7 +4,7 @@
     package="com.example.p1_ap2_junior_20190009">
 
     <application
-        android:name=".Parcial1Ap2App"
+        android:name=".PrestamosApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
