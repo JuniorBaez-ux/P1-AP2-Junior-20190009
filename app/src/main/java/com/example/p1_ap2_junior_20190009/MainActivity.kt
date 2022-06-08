@@ -11,8 +11,8 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.p1_ap2_junior_20190009.ui.componentes.Prestamo.ConsultaPrestamosScreen
-import com.example.p1_ap2_junior_20190009.ui.componentes.Prestamo.RegistroPrestamoScreen
+import com.example.p1_ap2_junior_20190009.ui.Prestamo.ConsultaPrestamosScreen
+import com.example.p1_ap2_junior_20190009.ui.Prestamo.RegistroPrestamoScreen
 import com.example.p1_ap2_junior_20190009.ui.theme.RegistroPrestamosComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
