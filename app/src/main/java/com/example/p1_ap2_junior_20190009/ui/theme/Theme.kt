@@ -30,7 +30,7 @@ private val LightColorPalette = lightColors(
 
 //TODO Tema del registro principal
 @Composable
-fun RegistroParcial1Ap2ComposeTheme(
+fun RegistroPrestamosComposeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
