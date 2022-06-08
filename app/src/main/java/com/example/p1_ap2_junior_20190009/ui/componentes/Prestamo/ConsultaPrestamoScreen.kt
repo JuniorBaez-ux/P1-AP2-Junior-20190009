@@ -35,7 +35,7 @@ fun ConsultaPrestamosScreen(
         },
         floatingActionButton = {
             FloatingActionButton(onClick = {
-                navHostController.navigate("RegistroParcial1Ap2")
+                navHostController.navigate("RegistroPrestamos")
             }) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = null)
             }
