@@ -73,12 +73,27 @@ fun RegistroPrestamoScreen(
 
         OutlinedButton(
             onClick = {
-                prestamoViewModel.Guardar()
-                navHostController.navigateUp()
+                if (validateNumber(prestamoViewModel.monto)){
+                    prestamoViewModel.Guardar()
+                    navHostController.navigateUp()
+                }else{
+
+                }
+
             }
         ) {
             Text(text = "Guardar")
         }
     }
+    }
+}
+
+fun validateNumber(number:String): Boolean {
+    val validation = number.toDouble()
+
+    if (validation >= 0){
+        return true
+    }else{
+        return false
     }
 }
