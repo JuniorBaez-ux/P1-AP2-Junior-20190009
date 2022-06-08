@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.p1_ap2_junior_20190009.data.PrestamosDao
 import com.example.p1_ap2_junior_20190009.data.PrestamosDb
-import com.example.p1_ap2_junior_20190009.data.repository.Parcial1Ap2Repository
+import com.example.p1_ap2_junior_20190009.data.repository.PrestamosRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,7 +36,7 @@ object  AppModule {
     }
 
     @Provides
-    fun ProvideParcial1Ap2Repository(prestamosDao: PrestamosDao): Parcial1Ap2Repository {
-        return Parcial1Ap2Repository(prestamosDao)
+    fun ProvideParcial1Ap2Repository(prestamosDao: PrestamosDao): PrestamosRepository {
+        return PrestamosRepository(prestamosDao)
     }
 }
