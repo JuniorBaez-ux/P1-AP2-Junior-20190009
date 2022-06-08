@@ -1,4 +1,4 @@
-package com.example.p1_ap2_junior_20190009.ui.componentes.Parcial1Ap2
+package com.example.p1_ap2_junior_20190009.ui.componentes.Prestamo
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,14 +14,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.example.p1_ap2_junior_20190009.RowPrestamos
 
 
 //TODO Realizar ventana de la consulta de la clase correspondiente
 
 @Composable
-fun ConsultaParcial1Ap2Screen(
+fun ConsultaPrestamosScreen(
     navHostController: NavHostController,
-    parcial1Ap2ViewModel: Parcial1Ap2ViewModel = hiltViewModel()
+    prestamoViewModel: PrestamoViewModel = hiltViewModel()
 ){
 
     val ScaffoldState = rememberScaffoldState()
@@ -29,7 +30,7 @@ fun ConsultaParcial1Ap2Screen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Consulta del primer parcial")}
+                title = { Text(text = "Consulta de Prestamos")}
             )
         },
         floatingActionButton = {
@@ -45,13 +46,13 @@ fun ConsultaParcial1Ap2Screen(
         Column(modifier = Modifier
             .padding(it)
             .padding(8.dp)) {
-            //val listaclientes = clienteViewModel.clientes.collectAsState(initial = emptyList())
+            val listaprestamos = prestamoViewModel.prestamos.collectAsState(initial = emptyList())
 
-          /*  LazyColumn(modifier = Modifier.fillMaxWidth()){
-                items(listaclientes.value){
-                        nombre -> RowPersona(nombre = nombre.nombre)
+            LazyColumn(modifier = Modifier.fillMaxWidth()){
+                items(listaprestamos.value){
+                        deudor -> RowPrestamos(nombre = deudor.deudor)
                 }
-            }*/
+            }
         }
     }
 
