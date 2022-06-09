@@ -56,7 +56,7 @@ fun RowPrestamos(nombre:String, monto:Double, concepto:String){
             Text(text = " $nombre")
             Text(text = " $concepto")
         }
-        Text(text = "$: $monto")
+        Text(text = "$$monto")
 }
 
 @Preview(showBackground = true, showSystemUi = true)
